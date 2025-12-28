@@ -2,10 +2,8 @@ import Foundation
 import Infrastructure
 import Domain
 
-/// Observable settings manager for ClaudeBar preferences.
+/// Settings manager for ClaudeBar preferences.
 /// Credentials are stored in UserDefaults via CredentialStore.
-@MainActor
-@Observable
 public final class AppSettings {
     public static let shared = AppSettings()
 
