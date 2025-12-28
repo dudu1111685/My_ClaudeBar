@@ -281,11 +281,6 @@ ClaudeBar for Linux is a complete port maintaining feature parity with macOS.
 
 Same license as the macOS version.
 
-## Credits
-
-**Original macOS Version:** ClaudeBar
-**Linux Port:** Claude Code (AI-assisted port maintaining identical functionality)
-
 ---
 
 **Enjoy monitoring your AI usage on Linux! 🐧**
