@@ -33,55 +33,60 @@
 
 ## Installation
 
-### 1. Install Dependencies
+### Quick Setup (Recommended)
 
-**Ubuntu / Pop!_OS / Debian:**
-```bash
-# Install Swift (if not already installed)
-curl -s https://swiftlang.github.io/swiftly/swiftly-install.sh | bash
-swiftly install latest
-
-# Install GTK4 and dependencies
-sudo apt update
-sudo apt install libgtk-4-dev libglib2.0-dev pkg-config git
-```
-
-**Fedora:**
-```bash
-# Install Swift
-sudo dnf install swift-lang
-
-# Install GTK4 and dependencies
-sudo dnf install gtk4-devel glib2-devel pkg-config git
-```
-
-**Arch Linux:**
-```bash
-# Install Swift
-sudo pacman -S swift
-
-# Install GTK4 and dependencies
-sudo pacman -S gtk4 glib2 pkg-config git
-```
-
-### 2. Build from Source
+**One command to install everything:**
 
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/ClaudeBar.git
 cd ClaudeBar
 
-# Checkout Linux branch
-git checkout claude/linux-port-gtk4
-
-# Build
-./build-linux.sh
+# Run the automated installer (installs Swift, GTK4, builds, and installs)
+./setup-linux.sh
 ```
 
-### 3. Install
+The setup script will:
+1. ✅ Install Swift (via swiftly)
+2. ✅ Install GTK4 and dependencies for your distro
+3. ✅ Install Node.js for AI CLI tools (optional)
+4. ✅ Build ClaudeBar
+5. ✅ Install to `/usr/local/bin`
+6. ✅ Create desktop entry
+
+**Supported distributions:**
+- Ubuntu 22.04+ / Pop!_OS 22.04+
+- Debian 11+
+- Fedora 36+
+- Arch Linux / Manjaro
+- openSUSE
+
+### Manual Installation (Advanced)
+
+If you prefer manual control:
+
+**1. Install Dependencies:**
 
 ```bash
-# Install system-wide
+# Ubuntu/Debian/Pop!_OS
+sudo apt install libgtk-4-dev libglib2.0-dev pkg-config git
+
+# Fedora
+sudo dnf install gtk4-devel glib2-devel pkg-config git
+
+# Arch Linux
+sudo pacman -S gtk4 glib2 pkg-config git
+```
+
+**2. Install Swift:**
+```bash
+curl -s https://swiftlang.github.io/swiftly/swiftly-install.sh | bash
+swiftly install latest
+```
+
+**3. Build & Install:**
+```bash
+./build-linux.sh
 ./install-linux.sh
 ```
 
