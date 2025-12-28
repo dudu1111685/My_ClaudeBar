@@ -4,15 +4,16 @@ import PackageDescription
 let package = Package(
     name: "ClaudeBar",
     platforms: [
-        .macOS(.v15),
+        .linux,
     ],
     products: [
-        .executable(name: "ClaudeBar", targets: ["ClaudeBar"]),
+        .executable(name: "claudebar", targets: ["ClaudeBar"]),
         .library(name: "Domain", targets: ["Domain"]),
         .library(name: "Infrastructure", targets: ["Infrastructure"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/sparkle-project/Sparkle", from: "2.8.1"),
+        // GTK4 Swift bindings
+        .package(url: "https://github.com/rhx/SwiftGtk", branch: "main"),
         .package(url: "https://github.com/Kolos65/Mockable.git", from: "0.5.0"),
     ],
     targets: [
@@ -45,14 +46,14 @@ let package = Package(
             ]
         ),
 
-        // MARK: - Main Application (UI directly exposes domain)
-        // SwiftUI views directly use rich domain models - no ViewModel layer
+        // MARK: - Main Application (GTK4 UI)
+        // GTK4 views directly use rich domain models - no ViewModel layer
         .executableTarget(
             name: "ClaudeBar",
             dependencies: [
                 "Domain",
                 "Infrastructure",
-                .product(name: "Sparkle", package: "Sparkle"),
+                .product(name: "Gtk", package: "SwiftGtk"),
             ],
             path: "Sources/App",
             exclude: [
@@ -65,7 +66,11 @@ let package = Package(
             ],
             swiftSettings: [
                 .enableUpcomingFeature("StrictConcurrency"),
-                .define("ENABLE_SPARKLE"),
+            ],
+            linkerSettings: [
+                .linkedLibrary("gtk-4"),
+                .linkedLibrary("glib-2.0"),
+                .linkedLibrary("gobject-2.0"),
             ]
         ),
 
