@@ -5,29 +5,11 @@
 [![codecov](https://codecov.io/gh/tddworks/ClaudeBar/graph/badge.svg)](https://codecov.io/gh/tddworks/ClaudeBar)
 [![Latest Release](https://img.shields.io/github/v/release/tddworks/ClaudeBar)](https://github.com/tddworks/ClaudeBar/releases/latest)
 [![Swift 6.2](https://img.shields.io/badge/Swift-6.2-orange.svg)](https://swift.org)
-[![Platform](https://img.shields.io/badge/Platform-macOS%2015-blue.svg)](https://developer.apple.com)
+[![Platform](https://img.shields.io/badge/Platform-macOS%2015%20%7C%20Linux-blue.svg)](https://developer.apple.com)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/🎄-Merry_Christmas-red?style=for-the-badge" alt="Merry Christmas"/>
-  <img src="https://img.shields.io/badge/❄️-Happy_Holidays-blue?style=for-the-badge" alt="Happy Holidays"/>
-  <img src="https://img.shields.io/badge/🎁-2025-green?style=for-the-badge" alt="2025"/>
-</p>
+AI usage monitoring for macOS and Linux. Keep track of your Claude, Codex, Gemini, and GitHub Copilot usage at a glance.
 
-> 🎄✨ **Merry Christmas Eve, everyone!** ✨🎄
->
-> Wishing warmth, joy, and peace to all who celebrate. May your holidays be filled with love and laughter.
->
-> Time to slow down, enjoy the magic, and celebrate with the people who matter most.
->
-> However you spend tonight - we hope it's filled with joy 🎄
->
-> May your code be bug-free, your quotas stay green, and your builds always succeed! 🚀
->
-> *(P.S. Check ClaudeBar for a snowy surprise ❄️)*
->
-> **Happy Holidays!** ❤️🎁
-
-A macOS menu bar application that monitors AI coding assistant usage quotas. Keep track of your Claude, Codex, Gemini, and GitHub Copilot usage at a glance.
+> **🐧 Linux Users:** Check out [README-LINUX.md](README-LINUX.md) for Linux installation and setup!
 
 <p align="center">
   <img src="docs/Screenshot-dark.png" alt="ClaudeBar Dark Mode" width="380"/>
@@ -38,25 +20,16 @@ A macOS menu bar application that monitors AI coding assistant usage quotas. Kee
   <em>Dark Mode &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Light Mode</em>
 </p>
 
-### Christmas Theme
-
-<p align="center">
-  <img src="docs/Christmas-theme.png" alt="ClaudeBar Christmas Theme" width="450"/>
-</p>
-<p align="center">
-  <em>Festive holiday theme with snowfall animation - automatically enabled during the Christmas season!</em>
-</p>
-
 ## Features
 
 - **Multi-Provider Support** - Monitor Claude, Codex, Gemini, and GitHub Copilot quotas in one place
 - **Real-Time Quota Tracking** - View Session, Weekly, and Model-specific usage percentages
 - **Light & Dark Themes** - Automatically adapts to your system appearance
-- **Seasonal Themes** - Festive Christmas theme with snowfall animation, auto-enabled during the holiday season
 - **Visual Status Indicators** - Color-coded progress bars (green/yellow/red) show quota health
 - **System Notifications** - Get alerted when quota status changes to warning or critical
 - **Auto-Refresh** - Automatically updates quotas at configurable intervals
 - **Keyboard Shortcuts** - Quick access with `⌘D` (Dashboard) and `⌘R` (Refresh)
+- **🐧 Linux Support** - Full GTK4 port available (see [README-LINUX.md](README-LINUX.md))
 
 ## Quota Status Thresholds
 
