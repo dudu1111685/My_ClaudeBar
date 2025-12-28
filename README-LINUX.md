@@ -8,7 +8,7 @@
 
 ✨ **Identical UI to macOS version** - Same glassmorphism, gradients, and animations
 📊 **Multi-Provider Support** - Claude, Codex, Gemini, GitHub Copilot
-🎨 **Theme Support** - Light, Dark, System, and Christmas themes
+🎨 **Theme Support** - Light, Dark, and System themes
 💰 **Budget Tracking** - Claude API cost monitoring
 🔔 **Desktop Notifications** - Native Linux notifications
 🎯 **System Tray** - Menu bar integration (GTK4)
@@ -20,9 +20,6 @@
 
 ### Light Theme
 ![Light Theme](docs/screenshots/linux-light.png)
-
-### Christmas Theme 🎄
-![Christmas Theme](docs/screenshots/linux-christmas.png)
 
 ## Requirements
 
@@ -103,11 +100,10 @@ claudebar
 
 ### Theme Settings
 
-ClaudeBar supports 4 themes:
+ClaudeBar supports 3 themes:
 - **Light** - Bright purple-pink gradients
 - **Dark** - Deep purple with glassmorphism
 - **System** - Follows system theme
-- **Christmas** - Festive red/green/gold (auto-enabled Dec 24-26)
 
 Change theme in: **Settings → Appearance**
 

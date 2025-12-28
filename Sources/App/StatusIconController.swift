@@ -35,13 +35,6 @@ final class StatusIconController {
     }
 
     private var iconName: String {
-        let settings = AppSettings.shared
-        let isChristmas = ThemeMode(rawValue: settings.themeMode) == .christmas
-
-        if isChristmas {
-            return "weather-snow-symbolic"
-        }
-
         switch appState.overallStatus {
         case .healthy:
             return "emblem-default-symbolic"

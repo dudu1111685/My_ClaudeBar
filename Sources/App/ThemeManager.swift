@@ -6,14 +6,12 @@ enum ThemeMode: String, CaseIterable {
     case light
     case dark
     case system
-    case christmas
 
     var displayName: String {
         switch self {
         case .light: return "Light"
         case .dark: return "Dark"
         case .system: return "System"
-        case .christmas: return "Christmas"
         }
     }
 
@@ -22,12 +20,7 @@ enum ThemeMode: String, CaseIterable {
         case .light: return "weather-clear-symbolic"
         case .dark: return "weather-clear-night-symbolic"
         case .system: return "emblem-system-symbolic"
-        case .christmas: return "weather-snow-symbolic"
         }
-    }
-
-    var isChristmas: Bool {
-        self == .christmas
     }
 }
 
@@ -63,15 +56,7 @@ final class ThemeManager {
     }
 
     private func generateCSS(for theme: ThemeMode) -> String {
-        let isDark = (theme == .dark || theme == .christmas)
-
-        if theme == .christmas {
-            return christmasCSS
-        } else if isDark {
-            return darkCSS
-        } else {
-            return lightCSS
-        }
+        theme == .dark ? darkCSS : lightCSS
     }
 
     // MARK: - CSS Themes
@@ -218,91 +203,5 @@ final class ThemeManager {
         }
         """
     }
-
-    private var christmasCSS: String {
-        """
-        /* ClaudeBar Christmas Theme */
-
-        window {
-            background: linear-gradient(135deg,
-                rgb(64, 13, 20),
-                rgb(26, 26, 31),
-                rgb(13, 46, 26));
-        }
-
-        .glass-card {
-            background: linear-gradient(135deg,
-                rgba(255, 255, 255, 0.12),
-                rgba(255, 214, 0, 0.03));
-            border: 1px solid rgba(255, 214, 0, 0.6);
-            border-radius: 14px;
-        }
-
-        .provider-pill {
-            background: rgba(255, 255, 255, 0.10);
-            border: 1px solid rgba(255, 214, 0, 0.4);
-            border-radius: 20px;
-            padding: 6px 10px;
-        }
-
-        .provider-pill:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .provider-pill.selected {
-            background: linear-gradient(135deg,
-                rgb(235, 31, 38),
-                rgb(255, 214, 0));
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-        }
-
-        .text-primary {
-            color: white;
-        }
-
-        .text-secondary {
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .text-tertiary {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .christmas-accent {
-            color: rgb(255, 214, 0);
-        }
-
-        .christmas-red {
-            color: rgb(235, 31, 38);
-        }
-
-        .christmas-green {
-            color: rgb(26, 184, 82);
-        }
-
-        .status-healthy {
-            color: rgb(89, 235, 174);
-        }
-
-        .status-warning {
-            color: rgb(250, 184, 89);
-        }
-
-        .status-critical {
-            color: rgb(250, 107, 133);
-        }
-
-        .progress-bar {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 3px;
-        }
-
-        .progress-bar-fill {
-            border-radius: 3px;
-        }
-
-        /* Snow animation would need to be JavaScript/canvas */
-        """
-    }
+}
 }

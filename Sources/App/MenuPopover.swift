@@ -82,10 +82,7 @@ final class MenuPopover {
         titleLabel.styleContext.addClass(className: "text-primary")
         titleBox.packStart(child: titleLabel, expand: false, fill: false, padding: 0)
 
-        let settings = AppSettings.shared
-        let isChristmas = ThemeMode(rawValue: settings.themeMode) == .christmas
-        let subtitle = isChristmas ? "Happy Holidays!" : "AI Usage Monitor"
-        let subtitleLabel = Label(str: subtitle)
+        let subtitleLabel = Label(str: "AI Usage Monitor")
         subtitleLabel.setHalign(align: .start)
         subtitleLabel.styleContext.addClass(className: "caption-text")
         subtitleLabel.styleContext.addClass(className: "text-secondary")
